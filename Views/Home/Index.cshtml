@@ -1,0 +1,174 @@
+﻿@using TourismPlatform.Models
+@{
+    ViewData["Title"] = "Home";
+    var tours = ViewBag.PopularTours as List<Tour>;
+    var isLoggedIn = Context.Session.GetInt32("UserId") != null;
+}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Discover Your Next Adventure</h1>
+        <p class="hero-subtitle">Explore handpicked tours and create unforgettable travel memories with trusted local guides and agencies.</p>
+        @if (!isLoggedIn)
+        {
+            <a asp-controller="Tours" asp-action="Index" class="btn-primary-custom">Browse Tours</a>
+        }
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title">Why Choose TourismPlatform</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327z"/>
+                        </svg>
+                    </div>
+                    <h3>Global Destinations</h3>
+                    <p>Access tours across multiple countries and regions. Find the perfect destination for your next journey.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                    </div>
+                    <h3>Easy Booking</h3>
+                    <p>Simple and secure booking process. Reserve your spot in minutes and manage bookings with ease.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Verified Reviews</h3>
+                    <p>Read authentic feedback from real travelers. Make informed decisions based on genuine experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Tours Section -->
+<section class="tours-section">
+    <div class="container">
+        <h2 class="section-title">Featured Tours</h2>
+        @if (tours != null && tours.Any())
+        {
+            <div class="row">
+                @foreach (var tour in tours)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="tour-card">
+                            @if (!string.IsNullOrEmpty(tour.ImageUrl))
+                            {
+                                <img src="@tour.ImageUrl" class="tour-card-image" alt="@tour.Title">
+                            }
+                            else
+                            {
+                                <div class="tour-card-image-placeholder">
+                                    <span>No Image Available</span>
+                                </div>
+                            }
+                            <div class="tour-card-body">
+                                <h4 class="tour-card-title">@tour.Title</h4>
+                                <p class="tour-card-agency">@tour.Agency?.AgencyName</p>
+                                <div class="tour-card-details">
+                                    <span class="tour-price">$@tour.Price</span>
+                                    <span class="tour-duration">@tour.DurationDays Days</span>
+                                </div>
+                                <a asp-controller="Tours" asp-action="Details" asp-route-id="@tour.Id" class="btn-secondary-custom">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="empty-state">
+                <p>No tours available at the moment. Check back soon for exciting travel opportunities.</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Group Details Section -->
+<section class="group-section">
+    <div class="container">
+        <h2 class="section-title">Development Team</h2>
+        <div class="table-responsive">
+            <table class="group-table">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Full Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20027199</td>
+                        <td>Saugat Pathak</td>
+                    </tr>
+                    <tr>
+                        <td>20024096</td>
+                        <td>Hritik Subedi</td>
+                    </tr>
+                    <tr>
+                        <td>20023178</td>
+                        <td>Rupesh Ray</td>
+                    </tr>
+                    <tr>
+                        <td>20021142</td>
+                        <td>Muhammad Umair Alsam</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- User Type Section -->
+<section class="user-type-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="user-type-card agency-card">
+                    <h3>For Agencies & Tour Guides</h3>
+                    <p>Create and manage tours, handle bookings, track payments, and grow your travel business with our comprehensive platform.</p>
+                    <ul class="user-type-features">
+                        <li>Create unlimited tour listings</li>
+                        <li>Manage booking requests</li>
+                        <li>View detailed reports</li>
+                        <li>Receive customer feedback</li>
+                    </ul>
+                    <a asp-controller="Account" asp-action="Register" class="btn-outline-custom">Register as Agency</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="user-type-card tourist-card">
+                    <h3>For Tourists</h3>
+                    <p>Discover amazing destinations, book your dream tours, and share your travel experiences with our community.</p>
+                    <ul class="user-type-features">
+                        <li>Browse curated tours</li>
+                        <li>Secure online booking</li>
+                        <li>Track booking status</li>
+                        <li>Leave reviews and ratings</li>
+                    </ul>
+                    <a asp-controller="Account" asp-action="Register" class="btn-outline-custom">Register as Tourist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

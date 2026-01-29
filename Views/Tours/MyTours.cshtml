@@ -1,0 +1,53 @@
+@model IEnumerable<TourismPlatform.Models.Tour>
+@{
+    ViewData["Title"] = "My Tours";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>🏢 My Tours</h2>
+    <a asp-action="Create" class="btn btn-success">+ Create New Tour</a>
+</div>
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Duration</th>
+                    <th>Dates</th>
+                    <th>Bookings</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tour in Model)
+                {
+                    <tr>
+                        <td>@tour.Title</td>
+                        <td>$@tour.Price</td>
+                        <td>@tour.DurationDays days</td>
+                        <td>@tour.StartDate.ToString("MMM dd") - @tour.EndDate.ToString("MMM dd, yyyy")</td>
+                        <td>
+                            <span class="badge bg-info">@(tour.Bookings?.Count ?? 0) / @tour.MaxGroupSize</span>
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@tour.Id" class="btn btn-sm btn-outline-primary">View</a>
+                            <a asp-action="Edit" asp-route-id="@tour.Id" class="btn btn-sm btn-outline-warning">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@tour.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <h5>No Tours Yet</h5>
+        <p>You haven't created any tours yet. Click the button above to create your first tour!</p>
+    </div>
+}

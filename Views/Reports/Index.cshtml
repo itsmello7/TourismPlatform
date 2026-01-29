@@ -1,0 +1,87 @@
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<h2 class="mb-4">📊 Booking Reports</h2>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body text-center">
+                <h3>@Model.TotalBookings</h3>
+                <p class="mb-0">Total Bookings</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-success text-white">
+            <div class="card-body text-center">
+                <h3>$@Model.TotalRevenue</h3>
+                <p class="mb-0">Total Revenue</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-info text-white">
+            <div class="card-body text-center">
+                <h3>@Model.PaidBookings</h3>
+                <p class="mb-0">Paid Bookings</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Booking Status Breakdown</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        </td>
+                        <td class="text-end">@Model.PendingBookings</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="badge bg-success">Confirmed</span>
+                        </td>
+                        <td class="text-end">@Model.ConfirmedBookings</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="badge bg-secondary">Completed</span>
+                        </td>
+                        <td class="text-end">@Model.CompletedBookings</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Payment Status Breakdown</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <span class="badge bg-success">Paid</span>
+                        </td>
+                        <td class="text-end">@Model.PaidBookings</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="badge bg-danger">Unpaid</span>
+                        </td>
+                        <td class="text-end">@Model.UnpaidBookings</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

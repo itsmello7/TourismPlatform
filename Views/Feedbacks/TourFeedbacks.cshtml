@@ -1,0 +1,41 @@
+@model IEnumerable<TourismPlatform.Models.Feedback>
+@{
+    ViewData["Title"] = "Tour Reviews";
+    var tour = ViewBag.Tour as TourismPlatform.Models.Tour;
+}
+
+<h2 class="mb-4">⭐ Reviews for @tour?.Title</h2>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var feedback in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <strong>@feedback.Booking?.Tourist?.User?.FullName</strong>
+                            <span>
+                                @for (int i = 0; i < feedback.Rating; i++)
+                                {
+                                    <span>⭐</span>
+                                }
+                            </span>
+                        </div>
+                        <p class="mt-2">@feedback.Comment</p>
+                        <small class="text-muted">@feedback.CreatedAt.ToString("MMM dd, yyyy")</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        No reviews yet for this tour.
+    </div>
+}
+
+<a asp-controller="Tours" asp-action="Details" asp-route-id="@tour?.Id" class="btn btn-outline-secondary">← Back to Tour</a>

@@ -1,0 +1,749 @@
+/* TourismPlatform Custom Styles */
+/* Color Palette: #1E3A5F (Navy), #27AE60 (Green), #FFFFFF (White) */
+
+:root {
+    --primary-navy: #1E3A5F;
+    --accent-green: #27AE60;
+    --accent-green-hover: #1E8449;
+    --white: #FFFFFF;
+    --light-gray: #F8F9FA;
+    --text-dark: #2C3E50;
+    --text-muted: #6C757D;
+    --border-color: #E5E7EB;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ========== Navbar Styles ========== */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-solid {
+    background-color: var(--primary-navy);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-transparent {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Add padding to body when not on home page */
+body:not(.home-page) main {
+    padding-top: 76px; /* Height of navbar */
+}
+
+/* Main content should grow to fill space */
+main {
+    flex: 1 0 auto;
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar .navbar-brand:hover {
+    color: var(--accent-green);
+}
+
+.brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--accent-green);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--accent-green);
+}
+
+.navbar .welcome-text {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-register {
+    background-color: var(--accent-green);
+    color: var(--white) !important;
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem !important;
+    margin-left: 0.5rem;
+}
+
+.btn-register:hover {
+    background-color: var(--accent-green-hover);
+    color: var(--white) !important;
+}
+
+/* ========== Hero Section ========== */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.45) 0%, rgba(21, 42, 69, 0.55) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.35rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary-custom {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--accent-green-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(39, 174, 96, 0.4);
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-section {
+        background-attachment: scroll;
+    }
+}
+
+/* ========== Section Styles ========== */
+.page-header {
+    background-color: var(--light-gray);
+    border-bottom: 1px solid var(--border-color);
+    margin: 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ========== Features Section ========== */
+.features-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background-color: var(--white);
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(30, 58, 95, 0.1);
+    border-radius: 50%;
+    color: var(--primary-navy);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========== Tours Section ========== */
+.tours-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.tour-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tour-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tour-card-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.tour-card-body {
+    padding: 1.5rem;
+}
+
+.tour-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin-bottom: 0.5rem;
+}
+
+.tour-card-agency {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tour-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.tour-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.tour-meta-item svg {
+    color: var(--primary-navy);
+}
+
+.tour-card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tour-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.tour-duration {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.btn-secondary-custom {
+    display: inline-block;
+    background-color: var(--primary-navy);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-secondary-custom:hover {
+    background-color: #2C5282;
+    color: var(--white);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    color: var(--text-muted);
+}
+
+/* ========== Group Section ========== */
+.group-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.group-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.group-table thead {
+    background-color: var(--primary-navy);
+}
+
+.group-table th {
+    padding: 1rem 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+    text-align: left;
+}
+
+.group-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--white);
+}
+
+.group-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.group-table tbody tr:hover td {
+    background-color: var(--light-gray);
+}
+
+/* ========== User Type Section ========== */
+.user-type-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.user-type-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    height: 100%;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.user-type-card:hover {
+    border-color: var(--accent-green);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.user-type-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 1rem;
+}
+
+.user-type-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.user-type-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.user-type-features li {
+    padding: 0.5rem 0;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.user-type-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+}
+
+.btn-outline-custom {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-navy);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--primary-navy);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--primary-navy);
+    color: var(--white);
+}
+
+/* ========== Footer Styles ========== */
+.footer-custom {
+    background-color: var(--primary-navy);
+    color: var(--white);
+    padding: 60px 0 30px;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.footer-custom h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.footer-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-green);
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 2rem 0;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ========== Form Styles ========== */
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-navy);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== Button Overrides ========== */
+.btn-primary {
+    background-color: var(--primary-navy);
+    border-color: var(--primary-navy);
+}
+
+.btn-primary:hover {
+    background-color: #2C5282;
+    border-color: #2C5282;
+}
+
+.btn-success {
+    background-color: #27AE60;
+    border-color: #27AE60;
+}
+
+.btn-warning {
+    background-color: var(--accent-green);
+    border-color: var(--accent-green);
+    color: var(--white);
+}
+
+.btn-warning:hover {
+    background-color: var(--accent-green-hover);
+    border-color: var(--accent-green-hover);
+    color: var(--white);
+}
+
+/* ========== Card Styles ========== */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--primary-navy);
+    color: var(--white);
+    border-radius: 12px 12px 0 0 !important;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+
+/* ========== Table Styles ========== */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: var(--primary-navy);
+}
+
+.table thead th {
+    color: var(--white);
+    font-weight: 600;
+    border: none;
+    padding: 1rem;
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* ========== Alert Styles ========== */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-info {
+    background-color: rgba(30, 58, 95, 0.1);
+    color: var(--primary-navy);
+}
+
+.alert-danger {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #C0392B;
+}
+
+.alert-success {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: #27AE60;
+}
+
+/* ========== Badge Styles ========== */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.75em;
+    border-radius: 6px;
+}
+
+/* ========== Utility Classes ========== */
+.text-primary {
+    color: var(--primary-navy) !important;
+}
+
+.text-accent {
+    color: var(--accent-green) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-navy) !important;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 20px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .features-section,
+    .tours-section,
+    .group-section,
+    .user-type-section {
+        padding: 50px 0;
+    }
+    
+    .user-type-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}

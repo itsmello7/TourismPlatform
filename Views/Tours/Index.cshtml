@@ -1,0 +1,81 @@
+@model IEnumerable<TourismPlatform.Models.Tour>
+@{
+    ViewData["Title"] = "Browse Tours";
+}
+
+<div class="page-header">
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="page-title">Browse Tours</h1>
+                <p class="page-subtitle">Discover amazing destinations and experiences</p>
+            </div>
+            @if (Context.Session.GetString("UserRole") == "Agency")
+            {
+                <a asp-action="Create" class="btn-primary-custom">Create New Tour</a>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    @if (Model.Any())
+    {
+        <div class="row g-4">
+            @foreach (var tour in Model)
+            {
+                <div class="col-md-4 col-lg-3">
+                    <div class="tour-card">
+                        @if (!string.IsNullOrEmpty(tour.ImageUrl))
+                        {
+                            <img src="@tour.ImageUrl" class="tour-card-image" alt="@tour.Title">
+                        }
+                        else
+                        {
+                            <div class="tour-card-image-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                    <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                                </svg>
+                            </div>
+                        }
+                        <div class="tour-card-body">
+                            <h4 class="tour-card-title">@tour.Title</h4>
+                            <p class="tour-card-agency">@tour.Agency?.AgencyName</p>
+                            <div class="tour-meta">
+                                <span class="tour-meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                    </svg>
+                                    @tour.DurationDays days
+                                </span>
+                                <span class="tour-meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                    </svg>
+                                    @tour.StartDate.ToString("MMM dd")
+                                </span>
+                            </div>
+                            <div class="tour-card-details">
+                                <span class="tour-price">$@tour.Price</span>
+                                <a asp-action="Details" asp-route-id="@tour.Id" class="btn-secondary-custom">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M6.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 6.5 8.5V5zM9 3a.5.5 0 0 1 .5.5v5.229l3.568 2.138a.5.5 0 0 1-.536.894L9 9.229V3.5A.5.5 0 0 1 9 3z"/>
+            </svg>
+            <h3>No Tours Available</h3>
+            <p>There are no tours available at the moment. Check back soon!</p>
+        </div>
+    }
+</div>

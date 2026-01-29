@@ -1,0 +1,79 @@
+@model TourismPlatform.Models.Booking
+@{
+    ViewData["Title"] = "Booking Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">📋 Booking Details</h4>
+            </div>
+            <div class="card-body">
+                <h5>@Model.Tour?.Title</h5>
+                <p class="text-muted">By @Model.Tour?.Agency?.AgencyName</p>
+                <hr />
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Booking Information</h6>
+                        <p><strong>Booking ID:</strong> #@Model.Id</p>
+                        <p><strong>Booking Date:</strong> @Model.BookingDate.ToString("MMM dd, yyyy HH:mm")</p>
+                        <p><strong>Status:</strong> 
+                            @if (Model.Status == "Pending")
+                            {
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            }
+                            else if (Model.Status == "Confirmed")
+                            {
+                                <span class="badge bg-success">Confirmed</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Completed</span>
+                            }
+                        </p>
+                        <p><strong>Payment:</strong> 
+                            @if (Model.PaymentStatus == "Paid")
+                            {
+                                <span class="badge bg-success">Paid</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Unpaid</span>
+                            }
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Tour Details</h6>
+                        <p><strong>Price:</strong> $@Model.Tour?.Price</p>
+                        <p><strong>Duration:</strong> @Model.Tour?.DurationDays days</p>
+                        <p><strong>Start Date:</strong> @Model.Tour?.StartDate.ToString("MMM dd, yyyy")</p>
+                        <p><strong>End Date:</strong> @Model.Tour?.EndDate.ToString("MMM dd, yyyy")</p>
+                    </div>
+                </div>
+                
+                @if (Model.Feedback != null)
+                {
+                    <hr />
+                    <h6>Your Feedback</h6>
+                    <p>
+                        <strong>Rating:</strong> 
+                        @for (int i = 0; i < Model.Feedback.Rating; i++)
+                        {
+                            <span>⭐</span>
+                        }
+                    </p>
+                    <p><strong>Comment:</strong> @Model.Feedback.Comment</p>
+                }
+                
+                <hr />
+                <a asp-action="Index" class="btn btn-outline-secondary">← Back to Bookings</a>
+                @if (Model.Status == "Completed" && Model.Feedback == null)
+                {
+                    <a asp-controller="Feedbacks" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-success">Leave Feedback</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
