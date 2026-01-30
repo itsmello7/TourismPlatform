@@ -1,0 +1,74 @@
+@model IEnumerable<TourismPlatform.Models.Booking>
+@{
+    ViewData["Title"] = "My Bookings";
+}
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Tour</th>
+                    <th>Agency</th>
+                    <th>Booking Date</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var booking in Model)
+                {
+                    <tr>
+                        <td>@booking.Tour?.Title</td>
+                        <td>@booking.Tour?.Agency?.AgencyName</td>
+                        <td>@booking.BookingDate.ToString("MMM dd, yyyy")</td>
+                        <td>
+                            @if (booking.Status == "Pending")
+                            {
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            }
+                            else if (booking.Status == "Confirmed")
+                            {
+                                <span class="badge bg-success">Confirmed</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Completed</span>
+                            }
+                        </td>
+                        <td>
+                            @if (booking.PaymentStatus == "Paid")
+                            {
+                                <span class="badge bg-success">Paid</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Unpaid</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@booking.Id" class="btn btn-sm btn-outline-primary">View</a>
+                            @if (booking.Status == "Completed" && booking.Feedback == null)
+                            {
+                                <a asp-controller="Feedbacks" asp-action="Create" asp-route-id="@booking.Id" class="btn btn-sm btn-outline-success">Leave Feedback</a>
+                            }
+                            @if (booking.Feedback != null)
+                            {
+                                <span class="badge bg-info">Reviewed ⭐@booking.Feedback.Rating</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <h5>No Bookings Yet</h5>
+        <p>You haven't booked any tours yet. <a asp-controller="Tours" asp-action="Index">Browse available tours</a> to get started!</p>
+    </div>
+}

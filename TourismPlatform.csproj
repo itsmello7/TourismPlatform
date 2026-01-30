@@ -1,0 +1,163 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\Debug\net10.0\rbcswa.dswa.cache.json" />
+    <Content Include="obj\Debug\net10.0\rjimswa.dswa.cache.json" />
+    <Content Include="obj\Debug\net10.0\rjsmcshtml.dswa.cache.json" />
+    <Content Include="obj\Debug\net10.0\rjsmrazor.dswa.cache.json" />
+    <Content Include="obj\Debug\net10.0\rpswa.dswa.cache.json" />
+    <Content Include="obj\Debug\net10.0\scopedcss\bundle\TourismPlatform.styles.css" />
+    <Content Include="obj\Debug\net10.0\scopedcss\projectbundle\TourismPlatform.bundle.scp.css" />
+    <Content Include="obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css" />
+    <Content Include="obj\Debug\net10.0\staticwebassets.build.endpoints.json" />
+    <Content Include="obj\Debug\net10.0\staticwebassets.build.json" />
+    <Content Include="obj\Debug\net10.0\staticwebassets.development.json" />
+    <Content Include="obj\Debug\net10.0\TourismPlatform.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\ApiEndpoints.json" />
+    <Content Include="obj\Debug\net8.0\rjimswa.dswa.cache.json" />
+    <Content Include="obj\Debug\net8.0\rjsmcshtml.dswa.cache.json" />
+    <Content Include="obj\Debug\net8.0\rjsmrazor.dswa.cache.json" />
+    <Content Include="obj\Debug\net8.0\rpswa.dswa.cache.json" />
+    <Content Include="obj\Debug\net8.0\scopedcss\bundle\TourismPlatform.styles.css" />
+    <Content Include="obj\Debug\net8.0\scopedcss\projectbundle\TourismPlatform.bundle.scp.css" />
+    <Content Include="obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.build.endpoints.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.build.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.development.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.references.upToDateCheck.txt" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.removed.txt" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.upToDateCheck.txt" />
+    <Content Include="obj\Debug\net8.0\TourismPlatform.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\TourismPlatform.csproj.nuget.dgspec.json" />
+    <Content Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\net10.0\apphost" />
+    <None Include="obj\Debug\net10.0\apphost.exe" />
+    <None Include="obj\Debug\net10.0\compressed\0o2lhtsxrj-{0}-b7pk76d08c-b7pk76d08c.gz" />
+    <None Include="obj\Debug\net10.0\compressed\1dmot0ci3l-{0}-06098lyss8-06098lyss8.gz" />
+    <None Include="obj\Debug\net10.0\compressed\1p9penmjy9-{0}-ub07r2b239-ub07r2b239.gz" />
+    <None Include="obj\Debug\net10.0\compressed\2aglyarq4v-{0}-63fj8s7r0e-63fj8s7r0e.gz" />
+    <None Include="obj\Debug\net10.0\compressed\2dy3dwg9uq-{0}-87fc7y1x7t-87fc7y1x7t.gz" />
+    <None Include="obj\Debug\net10.0\compressed\2qfoejasm5-{0}-du9xi9mf84-du9xi9mf84.gz" />
+    <None Include="obj\Debug\net10.0\compressed\352f3euviz-{0}-iovd86k7lj-iovd86k7lj.gz" />
+    <None Include="obj\Debug\net10.0\compressed\39ravqw5ct-{0}-jfsiqqwiad-jfsiqqwiad.gz" />
+    <None Include="obj\Debug\net10.0\compressed\3dhytd7gn7-{0}-pk9g2wxc8p-pk9g2wxc8p.gz" />
+    <None Include="obj\Debug\net10.0\compressed\42k24fl1vd-{0}-rzd6atqjts-rzd6atqjts.gz" />
+    <None Include="obj\Debug\net10.0\compressed\46x0e5mcvt-{0}-61n19gt1b8-61n19gt1b8.gz" />
+    <None Include="obj\Debug\net10.0\compressed\4npt4gew0o-{0}-ee0r1s7dh0-ee0r1s7dh0.gz" />
+    <None Include="obj\Debug\net10.0\compressed\4w7cnighmo-{0}-qlccset4i1-qlccset4i1.gz" />
+    <None Include="obj\Debug\net10.0\compressed\5myd4uor03-{0}-bqjiyaj88i-bqjiyaj88i.gz" />
+    <None Include="obj\Debug\net10.0\compressed\5tk4ai9qyi-{0}-nvvlpmu67g-nvvlpmu67g.gz" />
+    <None Include="obj\Debug\net10.0\compressed\5xqv09zloo-{0}-r4e9w2rdcm-r4e9w2rdcm.gz" />
+    <None Include="obj\Debug\net10.0\compressed\7d9hrznfua-{0}-6cfz1n2cew-6cfz1n2cew.gz" />
+    <None Include="obj\Debug\net10.0\compressed\7hczmmldaj-{0}-0i3buxo5is-0i3buxo5is.gz" />
+    <None Include="obj\Debug\net10.0\compressed\86lz7terho-{0}-j5mq2jizvt-j5mq2jizvt.gz" />
+    <None Include="obj\Debug\net10.0\compressed\8umjpdq0ap-{0}-fsbi9cje9m-fsbi9cje9m.gz" />
+    <None Include="obj\Debug\net10.0\compressed\968ne0dbwk-{0}-h1s4sie4z3-h1s4sie4z3.gz" />
+    <None Include="obj\Debug\net10.0\compressed\98va6s1y40-{0}-ft3s53vfgj-ft3s53vfgj.gz" />
+    <None Include="obj\Debug\net10.0\compressed\9ifh5ccd4t-{0}-v0zj4ognzu-v0zj4ognzu.gz" />
+    <None Include="obj\Debug\net10.0\compressed\a4fxsjc629-{0}-erw9l3u2r3-erw9l3u2r3.gz" />
+    <None Include="obj\Debug\net10.0\compressed\agdjzis0rj-{0}-46ein0sx1k-46ein0sx1k.gz" />
+    <None Include="obj\Debug\net10.0\compressed\bokpjxb1jv-{0}-jj8uyg4cgr-jj8uyg4cgr.gz" />
+    <None Include="obj\Debug\net10.0\compressed\bt2old3qd3-{0}-0j3bgjxly4-0j3bgjxly4.gz" />
+    <None Include="obj\Debug\net10.0\compressed\c9vzxo1xef-{0}-notf2xhcfb-notf2xhcfb.gz" />
+    <None Include="obj\Debug\net10.0\compressed\cfhfcdzly4-{0}-fvhpjtyr6v-fvhpjtyr6v.gz" />
+    <None Include="obj\Debug\net10.0\compressed\ckmpenfppz-{0}-37tfw0ft22-37tfw0ft22.gz" />
+    <None Include="obj\Debug\net10.0\compressed\datesjj1ep-{0}-muycvpuwrr-muycvpuwrr.gz" />
+    <None Include="obj\Debug\net10.0\compressed\dj6fe2s3lx-{0}-ilo7uva0vt-ilo7uva0vt.gz" />
+    <None Include="obj\Debug\net10.0\compressed\eyuxed3hcu-{0}-s35ty4nyc5-s35ty4nyc5.gz" />
+    <None Include="obj\Debug\net10.0\compressed\f5q4f6iwsr-{0}-k8d9w2qqmf-k8d9w2qqmf.gz" />
+    <None Include="obj\Debug\net10.0\compressed\fppv70pg66-{0}-c8erb1sgg4-c8erb1sgg4.gz" />
+    <None Include="obj\Debug\net10.0\compressed\fppv70pg66-{0}-j808i45k36-j808i45k36.gz" />
+    <None Include="obj\Debug\net10.0\compressed\g0l17cyjbv-{0}-y7v9cxd14o-y7v9cxd14o.gz" />
+    <None Include="obj\Debug\net10.0\compressed\g4q43xb3xx-{0}-vr1egmr9el-vr1egmr9el.gz" />
+    <None Include="obj\Debug\net10.0\compressed\gkb7jdbdoa-{0}-6pdc2jztkx-6pdc2jztkx.gz" />
+    <None Include="obj\Debug\net10.0\compressed\h1zxo51ig6-{0}-c2oey78nd0-c2oey78nd0.gz" />
+    <None Include="obj\Debug\net10.0\compressed\hsd9ti1qhn-{0}-aexeepp0ev-aexeepp0ev.gz" />
+    <None Include="obj\Debug\net10.0\compressed\ikdvaj4z88-{0}-4v8eqarkd7-4v8eqarkd7.gz" />
+    <None Include="obj\Debug\net10.0\compressed\imslqixsk0-{0}-c2jlpeoesf-c2jlpeoesf.gz" />
+    <None Include="obj\Debug\net10.0\compressed\jmcgjdv4z8-{0}-l3n5xuwxn8-l3n5xuwxn8.gz" />
+    <None Include="obj\Debug\net10.0\compressed\jtdbxcxhxs-{0}-ag7o75518u-ag7o75518u.gz" />
+    <None Include="obj\Debug\net10.0\compressed\k9p5vug05x-{0}-c8erb1sgg4-c8erb1sgg4.gz" />
+    <None Include="obj\Debug\net10.0\compressed\k9p5vug05x-{0}-j808i45k36-j808i45k36.gz" />
+    <None Include="obj\Debug\net10.0\compressed\my4onoe6ph-{0}-ausgxo2sd3-ausgxo2sd3.gz" />
+    <None Include="obj\Debug\net10.0\compressed\n6rx01d2t9-{0}-fr7q2aak1r-fr7q2aak1r.gz" />
+    <None Include="obj\Debug\net10.0\compressed\p14znhhxvu-{0}-ttgo8qnofa-ttgo8qnofa.gz" />
+    <None Include="obj\Debug\net10.0\compressed\pc3u8ivpte-{0}-d7shbmvgxk-d7shbmvgxk.gz" />
+    <None Include="obj\Debug\net10.0\compressed\q6473dbk4e-{0}-2z0ns9nrw6-2z0ns9nrw6.gz" />
+    <None Include="obj\Debug\net10.0\compressed\qepzyn0yk6-{0}-cosvhxvwiu-cosvhxvwiu.gz" />
+    <None Include="obj\Debug\net10.0\compressed\qt55wq7u2m-{0}-pj5nd1wqec-pj5nd1wqec.gz" />
+    <None Include="obj\Debug\net10.0\compressed\s8fovh1z7o-{0}-khv3u5hwcm-khv3u5hwcm.gz" />
+    <None Include="obj\Debug\net10.0\compressed\tfi5ubpa0n-{0}-xzw0cte36n-xzw0cte36n.gz" />
+    <None Include="obj\Debug\net10.0\compressed\ub30lv60ah-{0}-47otxtyo56-47otxtyo56.gz" />
+    <None Include="obj\Debug\net10.0\compressed\uq5995qc2d-{0}-kbrnm935zg-kbrnm935zg.gz" />
+    <None Include="obj\Debug\net10.0\compressed\v5huoes74t-{0}-493y06b0oq-493y06b0oq.gz" />
+    <None Include="obj\Debug\net10.0\compressed\vij5terjb3-{0}-o1o13a6vjx-o1o13a6vjx.gz" />
+    <None Include="obj\Debug\net10.0\compressed\vsvw58sbhb-{0}-dxx9fxp4il-dxx9fxp4il.gz" />
+    <None Include="obj\Debug\net10.0\compressed\wrsjtrtrb6-{0}-hrwsygsryq-hrwsygsryq.gz" />
+    <None Include="obj\Debug\net10.0\compressed\yv8k7ap5ns-{0}-tdbxkamptv-tdbxkamptv.gz" />
+    <None Include="obj\Debug\net10.0\compressed\yxvi4bi1tm-{0}-lcd1t2u6c8-lcd1t2u6c8.gz" />
+    <None Include="obj\Debug\net10.0\compressed\z0yezzjjyt-{0}-lzl9nlhx6b-lzl9nlhx6b.gz" />
+    <None Include="obj\Debug\net10.0\compressed\zbcnf1k41v-{0}-jd9uben2k1-jd9uben2k1.gz" />
+    <None Include="obj\Debug\net10.0\refint\TourismPlatform.dll" />
+    <None Include="obj\Debug\net10.0\ref\TourismPlatform.dll" />
+    <None Include="obj\Debug\net10.0\staticwebassets.build.json.cache" />
+    <None Include="obj\Debug\net10.0\swae.build.ex.cache" />
+    <None Include="obj\Debug\net10.0\TourismP.B18BD719.Up2Date" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.assets.cache" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.dll" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.pdb" />
+    <None Include="obj\Debug\net10.0\TourismPlatform.RazorAssemblyInfo.cache" />
+    <None Include="obj\Debug\net8.0\apphost.exe" />
+    <None Include="obj\Debug\net8.0\refint\TourismPlatform.dll" />
+    <None Include="obj\Debug\net8.0\ref\TourismPlatform.dll" />
+    <None Include="obj\Debug\net8.0\staticwebassets.build.json.cache" />
+    <None Include="obj\Debug\net8.0\swae.build.ex.cache" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.assets.cache" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.dll" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.pdb" />
+    <None Include="obj\Debug\net8.0\TourismPlatform.RazorAssemblyInfo.cache" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\net10.0\TourismPlatform.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net10.0\TourismPlatform.assets.cache" />
+    <None Include="obj\Release\net10.0\TourismPlatform.csproj.AssemblyReference.cache" />
+    <None Include="obj\Release\net10.0\TourismPlatform.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Release\net10.0\TourismPlatform.RazorAssemblyInfo.cache" />
+    <None Include="obj\TourismPlatform.csproj.nuget.g.props" />
+    <None Include="obj\TourismPlatform.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\Debug\net10.0\staticwebassets\" />
+    <Folder Include="obj\Debug\net8.0\staticwebassets\" />
+    <Folder Include="obj\Release\net10.0\refint\" />
+    <Folder Include="obj\Release\net10.0\ref\" />
+  </ItemGroup>
+
+</Project>

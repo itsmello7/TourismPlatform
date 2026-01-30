@@ -1,0 +1,67 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace TourismPlatform.Models
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<AgencyProfile> AgencyProfiles { get; set; }
+        public DbSet<TouristProfile> TouristProfiles { get; set; }
+        public DbSet<Tour> Tours { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // User - unique email
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
+            // User - AgencyProfile (one-to-one)
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.AgencyProfile)
+                .WithOne(a => a.User)
+                .HasForeignKey<AgencyProfile>(a => a.UserId);
+
+            // User - TouristProfile (one-to-one)
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.TouristProfile)
+                .WithOne(t => t.User)
+                .HasForeignKey<TouristProfile>(t => t.UserId);
+
+            // AgencyProfile - Tours (one-to-many)
+            modelBuilder.Entity<AgencyProfile>()
+                .HasMany(a => a.Tours)
+                .WithOne(t => t.Agency)
+                .HasForeignKey(t => t.AgencyId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // TouristProfile - Bookings (one-to-many)
+            modelBuilder.Entity<TouristProfile>()
+                .HasMany(t => t.Bookings)
+                .WithOne(b => b.Tourist)
+                .HasForeignKey(b => b.TouristId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Tour - Bookings (one-to-many)
+            modelBuilder.Entity<Tour>()
+                .HasMany(t => t.Bookings)
+                .WithOne(b => b.Tour)
+                .HasForeignKey(b => b.TourId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Booking - Feedback (one-to-one)
+            modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Feedback)
+                .WithOne(f => f.Booking)
+                .HasForeignKey<Feedback>(f => f.BookingId);
+        }
+    }
+}

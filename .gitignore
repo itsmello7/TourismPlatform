@@ -1,0 +1,38 @@
+# Visual Studio / .NET artifacts
+## Build
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+
+## Visual Studio specific
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sdf
+*.cache
+
+## VS Code
+.vscode/
+
+## Rider
+.idea/
+
+## NuGet
+*.nupkg
+packages/
+
+## Logs
+*.log
+
+## OS
+.DS_Store
+Thumbs.db
+
+## ASP.NET Core
+appsettings.Development.json
+
+# Ignore build outputs from VS
+**/bin/
+**/obj/
